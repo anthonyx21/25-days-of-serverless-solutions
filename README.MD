@@ -1,0 +1,1 @@
+Solutions for [25 Days of Serverless Challenge](https://25daysofserverless.com/)
