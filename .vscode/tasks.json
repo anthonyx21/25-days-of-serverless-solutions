@@ -6,18 +6,38 @@
             "command": "host start",
             "problemMatcher": "$func-watch",
             "isBackground": true,
-            "dependsOn": "npm install"
+            "dependsOn": "npm build",
+            "options": {
+                "cwd": "${workspaceFolder}/day1"
+            }
+        },
+        {
+            "type": "shell",
+            "label": "npm build",
+            "command": "npm run build",
+            "dependsOn": "npm install",
+            "problemMatcher": "$tsc",
+            "options": {
+                "cwd": "${workspaceFolder}/day1"
+            }
         },
         {
             "type": "shell",
             "label": "npm install",
-            "command": "npm install"
+            "command": "npm install",
+            "options": {
+                "cwd": "${workspaceFolder}/day1"
+            }
         },
         {
             "type": "shell",
             "label": "npm prune",
             "command": "npm prune --production",
-            "problemMatcher": []
+            "dependsOn": "npm build",
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}/day1"
+            }
         }
     ]
 }
